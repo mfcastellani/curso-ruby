@@ -10,9 +10,8 @@ end
 
 gr = Greeting.new
 gr.hi("Marcelo")
-
-gr.hi("Seu nome")
 gr.hi("Paulo Lins")
 gr.hi("Jackson Lima")
+gr.hi("Ana Paula")
 gr.hi("Joao Gilberto")
 gr.hi("Franco Caldas")
