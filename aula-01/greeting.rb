@@ -11,4 +11,5 @@ end
 gr = Greeting.new
 gr.hi("Marcelo")
 
+gr.hi("Seu nome")
 gr.hi("Ana Paula")
