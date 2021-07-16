@@ -1,6 +1,6 @@
 class Greeting 
-    def hi(coisa)
-        puts "Olá, #{coisa}! Que seu dia seja lindo!"
+    def hi(pessoa)
+        puts "Olá, #{pessoa}! Que seu dia seja lindo!"
     end
 
     def to_s
