@@ -1,6 +1,6 @@
 class Greeting 
-    def hi(coisa)
-        puts "Olá, #{coisa}! Que seu dia seja lindo!"
+    def hi(pessoa)
+        puts "Olá, #{pessoa}! Que seu dia seja lindo!"
     end
 
     def to_s
@@ -10,5 +10,10 @@ end
 
 gr = Greeting.new
 gr.hi("Marcelo")
-
+gr.hi("Paulo Lins")
+gr.hi("Jackson Lima")
+gr.hi("Ana Paula")
+gr.hi("Joao Gilberto")
+gr.hi("Franco Caldas")
+gr.hi("Bruno Bastos")
 gr.hi("Jessica")
