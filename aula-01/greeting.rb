@@ -22,4 +22,4 @@ gr.hi("Micael Marques")
 gr.hi("Lucas Lucatero")
 gr.hi("Breno Castellani")
 gr.hi("Lucas Galli")
-
+gr.hi("Karina D'arc")
