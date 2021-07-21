@@ -27,4 +27,6 @@ def algorithm_2 sentence
         else
             new_sentence += char
         end
+    end
+    new_sentence
 end
