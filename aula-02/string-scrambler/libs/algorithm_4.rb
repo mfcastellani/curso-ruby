@@ -12,3 +12,24 @@
 #               - Paulo Castro
 #               - Paulo Lins
 #               - Victor Guedes
+
+def algorithm_scrambler4 sentence4
+
+    sentence4.reverse!
+
+    sentence4.downcase!
+
+    new_sentence = ""
+    sentence.chars.each do |char|
+        if ["a", "e", "i", "o", "u"].include? char
+            new_sentence += char.downcase
+        elsif char == " "
+            new_sentence += "_"
+        else
+            new_sentence += char
+        end
+    end
+
+
+    new_sentence
+end
