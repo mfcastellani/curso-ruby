@@ -1,9 +1,11 @@
 require_relative "./libs/example.rb"
+require_relative "./libs/algorithm_2.rb"
 require_relative "./libs/algorithm_1.rb"
 
 def available_algorithms
   puts "A -> Algoritmo 1"
   puts "E -> Algoritimo de exemplo, por Marcelo Castellani"
+  puts "2 -> Opção 2 de criptografia"
 end
 
 # receber frase
@@ -23,6 +25,8 @@ ret = case algoritimo
     algorithm_1 frase
   when "E"
     example_scrambler frase
+  when "2"
+    algorithm_2 frase
   else
     "A opção digitada não é válida. Verifique e tente novamente!"
   end

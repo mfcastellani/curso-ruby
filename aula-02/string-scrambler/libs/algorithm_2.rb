@@ -12,3 +12,21 @@
 #               - Gabriela Batalha
 #               - João Gilberto
 #               - João Príscio
+
+def algorithm_2 sentence
+    # inverte a string
+    sentence = sentence.reverse
+
+    # retira os espaços e coloca as vogais em maiusculo
+    new_sentence = ""
+    sentence.chars.each do |char|
+        if ["a", "e", "i", "o", "u"].include? char
+            new_sentence += char.upcase
+        elsif char == " "
+            new_sentence += ""
+        else
+            new_sentence += char
+        end
+    end
+    new_sentence
+end
