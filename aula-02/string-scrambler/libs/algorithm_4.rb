@@ -12,7 +12,7 @@
 #               - Paulo Castro
 #               - Paulo Lins
 #               - Victor Guedes
-def example_scrambler4 sentence
+def algorithm_4 sentence
     # inverte a string e deixa tudo em minusculo
     sentence = sentence.reverse.downcase
 

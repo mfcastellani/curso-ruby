@@ -5,11 +5,11 @@ require_relative "./libs/algorithm_3.rb"
 require_relative "./libs/algorithm_4.rb"
 
 def available_algorithms
-  puts "E -> Algoritimo de exemplo, por Marcelo Castellani"
-  puts "A -> Algoritmo 1"
-  puts "2 -> Opção 2 de criptografia"
+  puts "1 -> Algoritmo 1"
+  puts "2 -> Algoritmo 2"
   puts "3 -> Algoritimo 3"
-  puts "D -> Algoritimo 4, por grupo 4"
+  puts "4 -> Algoritimo 4"
+  puts "5 -> Algoritimo de exemplo, por Marcelo Castellani"
 end
 
 # receber frase
@@ -24,17 +24,17 @@ print "Selecione o algoritimo que deseja usar: "
 algoritimo = gets.chomp
 
 # executar o embaralhamento
-ret = case algoritimo
-  when "D"
-    example_scrambler4 frase   
-  when "A"
+ret = case algoritimo   
+  when "1"
     algorithm_1 frase
-  when "E"
-    example_scrambler frase
   when "2"
     algorithm_2 frase
   when "3"
-    alg3_scrambler frase
+    algorithm_3 frase
+  when "4"
+    algorithm_4 frase
+  when "5"
+    example_scrambler frase
   else
     "A opção digitada não é válida. Verifique e tente novamente!"
   end
