@@ -3,7 +3,7 @@
 # passada como parâmetro, inverter a order dela e 
 # colocar todas as vogais em MAIUSCULAS.
 
-def alg3_scrambler sentence
+def algorithm_3 sentence
     # inverte a string
     sentence = sentence.reverse
 
