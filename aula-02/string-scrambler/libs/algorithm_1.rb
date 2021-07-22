@@ -22,7 +22,7 @@ def algorithm_1 sentence
 
   # colocar consoantes em maiúsculo
   new_sentence = ""
-  consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "x", "y", "z"]
+  consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m","ç", "n", "p", "q", "r", "s", "t", "v", "x", "y", "z"]
   sentence.chars.each do |char|
       if consonants.include? char
           new_sentence += char.upcase

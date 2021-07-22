@@ -12,7 +12,7 @@ def available_algorithms
   puts "4 -> Algoritimo 4"
 end
 
-# receber frase
+# receber fras
 print "Digite a frase que deseja embaralhar: "
 frase = gets.chomp
 
