@@ -12,3 +12,21 @@
 #               - Paulo Castro
 #               - Paulo Lins
 #               - Victor Guedes
+def example_scrambler4 sentence
+    # inverte a string e deixa tudo em minusculo
+    sentence = sentence.reverse.downcase
+
+    # coloca as consoantes em maiusculo
+    new_sentence = ""
+    sentence.chars.each do |char|
+        if ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "x", "y", "z"].include? char
+            new_sentence += char.upcase
+        elsif char == " "
+            new_sentence += "_"
+        else
+            new_sentence += char
+        end
+    end
+    # retorna a frase modificada
+    new_sentence
+end
