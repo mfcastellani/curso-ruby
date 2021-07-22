@@ -12,3 +12,26 @@
 #               - Paulo Castro
 #               - Paulo Lins
 #               - Victor Guedes
+
+def example_scrambler sentence
+    # inverte a string
+    sentence = sentence.reverse
+
+    # coloca tudo em minusculo
+    sentence = sentence.downcase
+
+    # coloca as vogais em maiusculo
+    new_sentence = ""
+    sentence.chars.each do |char|
+        if consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "x", "y", "z"].include? char
+            new_sentence += char.upcase
+        elsif char == " "
+            new_sentence += "_"
+        else
+            new_sentence += char
+        end
+    end
+
+    # retorna a frase modificada
+    new_sentence
+end
