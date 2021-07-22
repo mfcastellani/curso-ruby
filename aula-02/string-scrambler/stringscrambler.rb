@@ -20,7 +20,7 @@ frase = gets.chomp
 available_algorithms
 
 # selecionar o algoritimo a usar
-print "Selecione o algoritimo que deseja usar: "
+print "Selecione o algoritimo que deseja usar : "
 algoritimo = gets.chomp
 
 # executar o embaralhamento
