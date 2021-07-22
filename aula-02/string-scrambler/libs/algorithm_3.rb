@@ -2,13 +2,27 @@
 # deverá trocar os espaços em branco por * da string
 # passada como parâmetro, inverter a order dela e 
 # colocar todas as vogais em MAIUSCULAS.
-# 
-# Exemplo: 
-# - Banana é uma ótima fonte de vitaminas
-# - sAnImAtIv*Ed*EtnOf*AmItÓ*AmU*É*AnAnAb"
-#
-# Responsáveis: - Jéssica Silva
-#               - Karina D'arc
-#               - Leonardo Santos
-#               - Lucas Galli
-#               - Lucas Lucatero
+
+def alg3_scrambler sentence
+    # inverte a string
+    sentence = sentence.reverse
+
+    # coloca tudo em minusculo
+    sentence = sentence.downcase
+
+    # coloca as vogais em maiusculo
+    new_sentence = ""
+    sentence.chars.each do |char|
+        if ["a", "e", "i", "o", "u"].include? char
+            new_sentence += char.upcase
+        elsif char == " "
+            new_sentence += "*"
+        else
+            new_sentence += char
+        end
+    end
+
+    # retorna a frase modificada
+    new_sentence
+end
+
