@@ -20,7 +20,7 @@ def algorithm_2 sentence
     # retira os espaços e coloca as vogais em maiusculo
     new_sentence = ""
     sentence.chars.each do |char|
-        if ["a", "e", "i", "o", "u"].include? char
+        if ["a", "e", "i", "o", "u", "é", "á", "à", "ó", "õ", "ê", "â", "ô", "ú"].include? char
             new_sentence += char.upcase
         elsif char == " "
             new_sentence += ""
