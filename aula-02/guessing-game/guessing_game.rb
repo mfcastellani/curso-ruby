@@ -2,7 +2,7 @@
 
 @number = rand(10)
 
-def escolherls
+def escolher
     puts 'Tente adivinhar o número de 0 a 10 ou digite 99 para sair'
     @escolha = gets.chomp.to_i
     if @escolha == 99
