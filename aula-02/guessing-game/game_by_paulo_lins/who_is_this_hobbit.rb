@@ -21,7 +21,6 @@ puts ""
 hobbits = ["Frodo", "Sam", "Merry", "Pippin", "Bilbo"]
 rand_hobbit = hobbits.sample
 
-
 puts 'Rápido, escreva o nome do hobbit que saiu da toca: '
 hobbit = gets.chomp
 
@@ -32,5 +31,3 @@ until hobbit == rand_hobbit
 end
 
 puts "Parabéns, você conseguiu ver o #{hobbit} sair da toca."
-
- 
