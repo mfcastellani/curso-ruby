@@ -9,14 +9,14 @@ loop do
   num_guesses += 1
 
   if guess == random_number
-    puts "\nVocê acertou PARABÉNS!"
+    puts 'Você acertou PARABÉNS!'
     puts "Você levou #{num_guesses} vezes para tentar adivinhar o meu número!"
     exit
   else
     message = if guess > random_number
-                "\nSeu palpite está alto."
+                puts 'Seu palpite está alto.'
               else
-                puts "\nSeu palpite está baixo."
+                puts 'Seu palpite está baixo.'
               end
 
     puts message
