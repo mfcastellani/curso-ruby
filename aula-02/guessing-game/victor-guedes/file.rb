@@ -14,18 +14,17 @@ gnum = gets.chomp
 gnum = gnum.to_i
 number = number.to_i
 
-    if  gnum == 0 
-        puts "Tchau"
-    else
-        while gnum != number
-            puts "Digite outro valor você não acertou"
-            gnum = gets.chomp
-            gnum = gnum.to_i
-                if gnum == number
-                    puts "Você acertou! O Numero era o #{number}"
-                        break  
-                end
+if  gnum == 0 
+    puts "Tchau"
+else
+    while gnum != number
+        puts "Digite outro valor você não acertou"
+        gnum = gets.chomp
+        gnum = gnum.to_i
+        if gnum == number
+            puts "Você acertou! O Numero era o #{number}"
+            break  
         end
-               
-    end
+    end               
+end
 
