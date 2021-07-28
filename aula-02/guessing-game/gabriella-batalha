@@ -1,0 +1,9 @@
+secret_number = "7"
+guess = ""
+
+while guess != secret_number
+    puts "Adivinhe um número de 1 a 8:"
+    guess = gets.chomp()
+end
+
+puts "Parabéns! Você adivinhou o número."
