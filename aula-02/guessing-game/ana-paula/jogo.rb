@@ -1,5 +1,7 @@
 def jogo chute
-  numero_magico = rand(10)
+  numero_magico = rand(11)
+    numero_magico = 1 if numero_magico.zero?
+
     if [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].include?(chute) 
       puts "#{chute} é um bom chute!"
       if chute == numero_magico 
