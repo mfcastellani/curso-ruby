@@ -19,11 +19,8 @@ loop do
         exit(0)
     end
 
-    # converte pra inteiro
-    chute = chute.to_i
-
     # comparar os números
-    if numero_secreto == chute
+    if numero_secreto == chute.to_i
         puts "Parabéns, vc acertou!"
         exit(0)
     else
