@@ -2,6 +2,12 @@
 # deverá trocar os espaços em branco por * da string
 # passada como parâmetro, inverter a order dela e 
 # colocar todas as vogais em MAIUSCULAS.
+#
+# Responsáveis: - Jéssica Silva
+#               - Karina D'arc
+#               - Leonardo Santos
+#               - Lucas Galli
+#               - Lucas Lucatero
 
 def algorithm_3 sentence
     # inverte a string
