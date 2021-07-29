@@ -13,7 +13,7 @@ puts '|       lhe ajude, pois os danados     |'
 puts '|               são rápidos!           |'
 puts '|                                      |'
 puts '|                            paulolins |'
-puts "========================================\n"
+puts '========================================'
 puts 'O jogo começou...'
 puts 'Pressione Ctrl+C se desejar sair'
 puts ''
