@@ -5,54 +5,60 @@
 #               - João Gilberto
 #               - João Príscio
 
-def somar(n,m)
-  n+m
+def somar(num1, num2)
+  num1 + num2
 end
-def diminuir(n,m)
-  n-m 
+
+def diminuir(num1, num2)
+  num1 - num2
 end
-def multiplicar(n,m)
-  n*m 
+
+def multiplicar(num1, num2)
+  num1 * num2
 end
-def dividir(n,m)
-  n/m 
+
+def dividir(num1, num2)
+  num1 / num2
 end
+
 def limpar
-  #o famoso C da calculadora
+  loop?
 end
+
 def sair
-  #utilizar o X
-  exit 0
+  exit(0)
 end
 
-  #Fazer o prompt do programa. Texto de entrada
+# Fazer o prompt do programa. Texto de entrada
+puts 'A qualquer momento use x para sair ou c para resetar a calculadora'
 
-  val1 = "c"
+val1 = 0
 
-  loop do
-  
-  resultado, val2 = 0
-  
-  #fazer um if para ver se quer sair ou limpar a qualquer momento
-
-  if val1 == c
-      print "Tecle o primeiro valor:"
-      val1 = gets.chomp
-      #Fazer a chamada para saída ou limpar
+loop do
+  # fazer um if para ver se quer limpar usando a letra "C" a qualquer momento
+  if val1.zero?
+    puts 'Tecle o primeiro valor:'
+    val1 = gets.chomp
+    sair if val1 == 'x'
   end
 
-  print "operador (+,-,*,/):"
+  puts 'Escolha um dos operadores: + - * ou /:'
   operador = gets.chomp
-      #Fazer a chamada para saída ou limpar
+  sair if operador == 'x'
+  # Fazer a chamada para saída ou limpar
 
-  print "Tecle o valor:"
+  puts 'Tecle o valor:'
   val2 = gets.chomp
-      #Fazer a chamada para saída ou limpar
-  
-  #método para transformar vírgula em ponto
-  #método para fazer val1 e val2 em float
-  #calculo do resultado
-  #depois val1 = resultado
-  #o print do resultado ou val1 (mesmo valor)
-  end
-  
+  sair if val2 == 'x'
+  # Fazer a chamada para saída ou limpar
+
+  resultado = somar(val1.to_f, val2.to_f) if operador == '+'
+  resultado = diminuir(val1.to_f, val2.to_f) if operador == '-'
+  resultado = multiplicar(val1.to_f, val2.to_f) if operador == '*'
+  resultado = dividir(val1.to_f, val2.to_f) if operador == '/'
+
+  puts "O resultado é #{resultado}"
+
+  val1 = resultado
+  # método para transformar vírgula em ponto
+end
