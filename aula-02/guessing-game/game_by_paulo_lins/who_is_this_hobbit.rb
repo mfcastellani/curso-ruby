@@ -1,24 +1,24 @@
-puts "========================================"
-puts "|          Quem é o Hobbit?!           |"
-puts "|    ------------------------------    |"
-puts "|       Tem um hobbit saindo da        |"
-puts "|         toca. Você consegue          |"
-puts "|       adivinhar qual hobbit é?       |"
-puts "|                                      |"
-puts "|       Será Bilbo, Frodo, Sam,        |"
-puts "|          Merry ou Pippin?            |"
-puts "|                                      |"
-puts "|       Que a senhora de Lothlórien    |"
-puts "|       lhe ajude, pois os danados     |"
-puts "|               são rápidos!           |"
-puts "|                                      |"
-puts "|                            paulolins |"
-puts "========================================\n"
-puts "O jogo começou..."
-puts "Pressione Ctrl+C se desejar sair"
-puts ""
+puts '========================================'
+puts '|          Quem é o Hobbit?!           |'
+puts '|    ------------------------------    |'
+puts '|       Tem um hobbit saindo da        |'
+puts '|         toca. Você consegue          |'
+puts '|       adivinhar qual hobbit é?       |'
+puts '|                                      |'
+puts '|       Será Bilbo, Frodo, Sam,        |'
+puts '|          Merry ou Pippin?            |'
+puts '|                                      |'
+puts '|       Que a senhora de Lothlórien    |'
+puts '|       lhe ajude, pois os danados     |'
+puts '|               são rápidos!           |'
+puts '|                                      |'
+puts '|                            paulolins |'
+puts '========================================'
+puts 'O jogo começou...'
+puts 'Pressione Ctrl+C se desejar sair'
+puts ''
 
-hobbits = ["Frodo", "Sam", "Merry", "Pippin", "Bilbo"]
+hobbits = %w[Frodo Sam Merry Pippin Bilbo]
 rand_hobbit = hobbits.sample
 
 puts 'Rápido, escreva o nome do hobbit que saiu da toca: '
