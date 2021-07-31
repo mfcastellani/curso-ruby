@@ -18,7 +18,7 @@ puts 'O jogo começou...'
 puts 'Pressione Ctrl+C se desejar sair'
 puts ''
 
-hobbits = %w[Frodo Sam Merry Pippin Bilbo]
+hobbits = %w[Frodo Sam Merry Pippin Bilbo Rosinha]
 rand_hobbit = hobbits.sample
 
 puts 'Rápido, escreva o nome do hobbit que saiu da toca: '
