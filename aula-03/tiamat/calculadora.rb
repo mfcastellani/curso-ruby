@@ -22,7 +22,7 @@ def dividir(num1, num2)
 end
 
 def limpar
-  puts "Você resetou a calculadora"
+  puts 'Você resetou a calculadora.'
   @val1 = 0
   true
 end
@@ -44,21 +44,21 @@ loop do
     sair if @val1 == 'x'
     # Reseta a calculadora caso o usuário tecle 'C'
     next if @val1.downcase == 'c' && limpar
+
+    @val1[","] = "." if @val1.include?(",")
   end
 
   puts 'Escolha um dos operadores: + - * ou /:'
   @operador = gets.chomp
   sair if @operador == 'x'
-  # Reseta a calculadora caso o usuário tecle 'C'
   next if @operador.downcase == 'c' && limpar
-  # Fazer a chamada para saída ou limpar
 
   puts 'Tecle o valor:'
   @val2 = gets.chomp
   sair if @val2 == 'x'
-  # Reseta a calculadora caso o usuário tecle 'C'
   next if @val2.downcase == 'c' && limpar
-  # Fazer a chamada para saída ou limpar
+
+  @val2[","] = "." if @val2.include?(",")
 
   @resultado = somar(@val1.to_f, @val2.to_f) if @operador == '+'
   @resultado = diminuir(@val1.to_f, @val2.to_f) if @operador == '-'
