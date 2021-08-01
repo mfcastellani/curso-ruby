@@ -62,7 +62,7 @@ loop do
   if @val1.zero?
     puts 'Tecle o primeiro valor:'
     @val1 = gets.chomp
-    sair if @val1 == 'x'
+    sair if @val1.downcase == 'x'
     # Reseta a calculadora caso o usuário tecle 'C'
     next if @val1.downcase == 'c' && limpar
 
@@ -71,12 +71,12 @@ loop do
 
   puts 'Escolha um dos operadores: + - * ou /:'
   @operador = gets.chomp
-  sair if @operador == 'x'
+  sair if @operador.downcase == 'x'
   next if @operador.downcase == 'c' && limpar
 
   puts 'Tecle o valor:'
   @val2 = gets.chomp
-  sair if @val2 == 'x'
+  sair if @val2.downcase == 'x'
   next if @val2.downcase == 'c' && limpar
 
   @val2[","] = "." if @val2.include?(",")
