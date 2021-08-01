@@ -1,9 +1,9 @@
 # Calculaora da Equipe Tiamat
-# Responsáveis: - Douglas Martins Matos
+# Responsaveis: - Douglas Martins Matos
 #               - Franco Caldas
 #               - Gabriela Batalha
-#               - João Gilberto
-#               - João Príscio
+#               - Joao Gilberto
+#               - Joao Priscio
 
 def somar(num1, num2)
   num1 + num2
@@ -31,7 +31,6 @@ def sair
   exit(0)
 end
 
-# Fazer o prompt do programa. Texto de entrada
 puts "=============================================================="
 puts "||                        .       .                         ||" 
 puts "||                         )     (                          ||"
@@ -58,12 +57,11 @@ puts "=============================================================="
 @val1 = 0
 
 loop do
-  # fazer um if para ver se quer limpar usando a letra "C" a qualquer momento
   if @val1.zero?
     puts 'Tecle o primeiro valor:'
     @val1 = gets.chomp
     sair if @val1.downcase == 'x'
-    # Reseta a calculadora caso o usuário tecle 'C'
+
     next if @val1.downcase == 'c' && limpar
 
     @val1[","] = "." if @val1.include?(",")
@@ -89,5 +87,4 @@ loop do
   puts "O resultado é #{@resultado}"
 
   @val1 = @resultado
-  # método para transformar vírgula em ponto
 end
