@@ -1,3 +1,5 @@
+#! /usr/bin/env ruby
+
 require_relative './lib/lib_calc'
 require 'awesome_print'
 
