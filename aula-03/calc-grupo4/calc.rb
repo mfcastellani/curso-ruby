@@ -8,8 +8,6 @@ num1 = gets.chomp.to_f
 puts 'Digite o segundo número: '
 num2 = gets.chomp.to_f
 
-puts num1
-
 result = calc.add(num1, num2)
 puts "A soma é: #{result}"
 ap result
