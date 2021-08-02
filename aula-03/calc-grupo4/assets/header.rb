@@ -3,16 +3,21 @@ def head
    ========================================#{' '}
    |       Calculadora MegaBlaster        |#{' '}
    |    ------------------------------    |#{' '}
-   |       Tem um hobbit saindo da        |#{' '}
-   |         toca. Você consegue          |#{' '}
-   |       adivinhar qual hobbit é?       |#{' '}
+   |       Vamos treinar para saber       |#{' '}
+   |         o quanto vocè é bom          |#{' '}
+   |           em fazer conta?            |#{' '}
    |                                      |#{' '}
-   |       Será Bilbo, Frodo, Sam,        |#{' '}
-   |          Merry ou Pippin?            |#{' '}
+   |      Pense em dois números para      |#{' '}
+   |      somar, subtrair, dividir ou     |#{' '}
+   |            multiplicar               |#{' '}
    |                                      |#{' '}
-   |       Que a senhora de Lothlórien    |#{' '}
-   |       lhe ajude, pois os danados     |#{' '}
-   |               são rápidos!           |#{' '}
+   |      Consegue acerta o resultado     |#{' '}
+   |       antes dele ser exibido ☻?      |#{' '}
+   |                                      |#{' '}
+   |      Para o correto funcionamento    |#{' '}
+   |       da calculadora, é preciso      |#{' '}
+   |       o awesome_print instalado.     |#{' '}
+   |     Veja o Readme para informações   |#{' '}
    |                                      |#{' '}
    |                              Grupo4  |#{' '}
    ========================================#{' '}
