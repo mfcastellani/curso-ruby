@@ -28,7 +28,13 @@ def limpar
 end
 
 def sair
+  puts 'Calculadora Tiamat encerrada.'
   exit(0)
+end
+
+def operadorValido
+  operadores = ['+', '-', '*', '/', 'c', 'x']
+  true if operadores.include?(@operador.downcase)
 end
 
 puts "=============================================================="
@@ -66,16 +72,31 @@ loop do
 
     @val1[","] = "." if @val1.include?(",")
   end
-
+  
+  
   puts 'Escolha um dos operadores: + - * ou /:'
   @operador = gets.chomp
+  #Valida o operador digitado pelo usuário
+  loop do
+    break if operadorValido
+    puts 'Operador inválido.'
+    puts 'Escolha um dos operadores: + - * ou /:'
+    @operador = gets.chomp  
+  end
+
   sair if @operador.downcase == 'x'
   next if @operador.downcase == 'c' && limpar
-
-  puts 'Tecle o valor:'
+  
+  puts 'Tecle o segundo valor:'
   @val2 = gets.chomp
   sair if @val2.downcase == 'x'
   next if @val2.downcase == 'c' && limpar
+
+  if @val2.to_i.zero? && @operador == '/'
+    puts 'Não é possível fazer a divisão por zero'
+    @val1 = 0
+    next
+  end
 
   @val2[","] = "." if @val2.include?(",")
 
