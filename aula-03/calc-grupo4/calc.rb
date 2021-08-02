@@ -8,9 +8,9 @@ puts head.yellow
 
 calc = Calc.new
 
-puts 'Digite o primeiro numero: '
+puts 'Digite o primeiro numero: '.blue
 num1 = gets.chomp.to_f
-puts 'Digite o segundo número: '
+puts 'Digite o segundo número: '.blue
 num2 = gets.chomp.to_f
 
 result = calc.sum(num1, num2)
