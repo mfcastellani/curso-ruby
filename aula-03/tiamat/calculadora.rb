@@ -64,7 +64,7 @@ puts "=============================================================="
 
 loop do
   if @val1.zero?
-    puts 'Tecle o primeiro valor:'
+    puts 'Digite o primeiro valor e tecle ENTER para confirmar:'
     @val1 = gets.chomp
     sair if @val1.downcase == 'x'
 
@@ -74,20 +74,20 @@ loop do
   end
   
   
-  puts 'Escolha um dos operadores: + - * ou /:'
+  puts 'Escolha um dos operadores: + - * ou / e tecle ENTER para confirmar:'
   @operador = gets.chomp
   #Valida o operador digitado pelo usuário
   loop do
     break if operador_valido
     puts 'Operador inválido.'
-    puts 'Escolha um dos operadores: + - * ou /:'
+    puts 'Escolha um dos operadores: + - * ou / e tecle ENTER para confirmar:'
     @operador = gets.chomp  
   end
 
   sair if @operador.downcase == 'x'
   next if @operador.downcase == 'c' && limpar
   
-  puts 'Tecle o segundo valor:'
+  puts 'Digite o segundo valor e tecle ENTER para confirmar:'
   @val2 = gets.chomp
   sair if @val2.downcase == 'x'
   next if @val2.downcase == 'c' && limpar
