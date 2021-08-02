@@ -32,7 +32,7 @@ def sair
   exit(0)
 end
 
-def operadorValido
+def operador_valido
   operadores = ['+', '-', '*', '/', 'c', 'x']
   true if operadores.include?(@operador.downcase)
 end
@@ -78,7 +78,7 @@ loop do
   @operador = gets.chomp
   #Valida o operador digitado pelo usuário
   loop do
-    break if operadorValido
+    break if operador_valido
     puts 'Operador inválido.'
     puts 'Escolha um dos operadores: + - * ou /:'
     @operador = gets.chomp  
