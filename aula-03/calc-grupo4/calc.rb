@@ -8,7 +8,7 @@ puts head.yellow
 
 calc = Calc.new
 
-puts 'Digite o primeiro numero: '.blue
+puts 'Digite o primeiro número: '.blue
 num1 = gets.chomp.to_f
 puts 'Digite o segundo número: '.blue
 num2 = gets.chomp.to_f
