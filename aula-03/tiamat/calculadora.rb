@@ -5,19 +5,19 @@
 #               - Joao Gilberto
 #               - Joao Priscio
 
-def somar(num1, num2)
+def plus(num1, num2)
   num1 + num2
 end
 
-def diminuir(num1, num2)
+def minus(num1, num2)
   num1 - num2
 end
 
-def multiplicar(num1, num2)
+def times(num1, num2)
   num1 * num2
 end
 
-def dividir(num1, num2)
+def divided(num1, num2)
   num1 / num2
 end
 
@@ -100,10 +100,10 @@ loop do
 
   @val2[","] = "." if @val2.include?(",")
 
-  @resultado = somar(@val1.to_f, @val2.to_f) if @operador == '+'
-  @resultado = diminuir(@val1.to_f, @val2.to_f) if @operador == '-'
-  @resultado = multiplicar(@val1.to_f, @val2.to_f) if @operador == '*'
-  @resultado = dividir(@val1.to_f, @val2.to_f) if @operador == '/'
+  @resultado = plus(@val1.to_f, @val2.to_f) if @operador == '+'
+  @resultado = minus(@val1.to_f, @val2.to_f) if @operador == '-'
+  @resultado = times(@val1.to_f, @val2.to_f) if @operador == '*'
+  @resultado = divided(@val1.to_f, @val2.to_f) if @operador == '/'
 
   puts "O resultado é #{@resultado}"
 
