@@ -1,21 +1,21 @@
 require_relative "./lib/metodos_calc.rb"
 
-apresentacao
+introduction
 
 loop do
-  mostrar_menu
-  operacao_escolhida = gets.chomp
+  show_menu
+  chosen_operation = gets.chomp
 
-  unless ['1', '2', '3', '4', '+', '-', '*', '/'].include?(operacao_escolhida) 
+  unless ['1', '2', '3', '4', '+', '-', '*', '/'].include?(chosen_operation) 
     puts '------------------------------------'
     puts 'Você escolheu sair do programa.'
     puts 'Obrigado por usar a calculadora do grupo Precious Developers. Tchau!'
     exit
   end
 
-  resultado_calculo = executar_calculo operacao_escolhida
+  calc_result = execute_calc chosen_operation
 
-  mostrar_resultado resultado_calculo, operacao_escolhida
+  show_result calc_result, chosen_operation
   
-  repetir_calculo
+  repeat_calc
 end

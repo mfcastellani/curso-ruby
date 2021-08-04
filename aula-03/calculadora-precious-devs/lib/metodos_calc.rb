@@ -1,6 +1,6 @@
 require_relative "./calculo.rb"
 
-def apresentacao
+def introduction
   puts '********************************'
   puts '        Calculadora'
   puts '********************************'
@@ -8,7 +8,7 @@ def apresentacao
   puts 'Esta calculadora realiza operações matemáticas entre dois números.'
 end
 
-def mostrar_menu
+def show_menu
   puts 'Digite o número da operação que você quer fazer:'
   puts ' 1) ==> Somar +'
   puts ' 2) ==> Subtrair -'
@@ -18,20 +18,20 @@ def mostrar_menu
   puts '--------------------------------'
 end
 
-def executar_calculo operacao
-  puts "Legal! Você escolheu #{mostrar_operacao operacao}"
+def execute_calc operation
+  puts "Legal! Você escolheu #{show_operation operation}"
   puts '--------------------------------'
   puts 'Digite o primeiro número:'
-  numero1 = gets.chomp
+  number1 = gets.chomp
   puts '--------------------------------'
   puts 'Digite o segundo número:'
-  numero2 = gets.chomp
-  resultado = calculo(operacao, numero1, numero2)
-  return numero1, numero2, resultado
+  number2 = gets.chomp
+  result = calc(operation, number1, number2)
+  return number1, number2, result
 end
 
-def mostrar_operacao operacao
-  simbolo = case operacao
+def show_operation operation
+  symbol = case operation
   when '1'
     '+'
   when '2'
@@ -41,30 +41,30 @@ def mostrar_operacao operacao
   when '4'
     '/'
   else 
-    operacao
+    operation
   end
-  simbolo
+  symbol
 end
 
-def mostrar_resultado resultado_calculo, operacao
-  numero1 = resultado_calculo[0]
-  numero2 = resultado_calculo[1]
-  numero3 = resultado_calculo[2]
+def show_result calc_result, operation
+  number1 = calc_result[0]
+  number2 = calc_result[1]
+  number3 = calc_result[2]
 
   puts "********************************"
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   puts "Resultado da sua operação:"
-  puts "#{numero1} #{mostrar_operacao operacao} #{numero2} = #{numero3}"
+  puts "#{number1} #{show_operation operation} #{number2} = #{number3}"
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   puts "********************************"
 end
 
-def repetir_calculo 
+def repeat_calc 
   puts "Você gostaria de realizar outra operação?"
   puts ' S  ==> Sim'
   puts ' N  ==> Não'
-  repetir = gets.chomp.upcase
-  if repetir == 'N'
+  repeat = gets.chomp.upcase
+  if repeat == 'N'
     puts "Você escolheu 'NÃO', então até mais e obrigado por usar a calculadora do grupo Precious Developers!"
     exit
   end

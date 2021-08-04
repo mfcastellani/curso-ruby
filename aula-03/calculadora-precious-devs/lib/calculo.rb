@@ -1,24 +1,24 @@
-def calculo operacao, numero1, numero2
-  numero1 = numero1.to_f
-  numero2 = numero2.to_f
+def calc operation, number1, number2
+  number1 = number1.to_f
+  number2 = number2.to_f
 
-  resultado = case operacao   
+  result = case operation   
   when '1' 
-    numero1 + numero2
+    number1 + number2
   when '+'
-    numero1 + numero2
+    number1 + number2
   when '2'
-    numero1 - numero2
+    number1 - number2
   when '-'
-    numero1 - numero2
+    number1 - number2
   when '3'
-    numero1 * numero2
+    number1 * number2
   when '*'
-    numero1 * numero2
+    number1 * number2
   when '4'
-    numero1 / numero2
+    number1 / number2
   when '/'
-    numero1 / numero2
+    number1 / number2
   end
-  resultado
+  result
 end
