@@ -1,20 +1,20 @@
-#Funcao somar
-def somar(a,b)
+#add function
+def add(a,b)
     (a+b).round(2)
 end
 
-#Funcao diminuir
-def diminuir(a,b)
+#subtract function
+def subtract(a,b)
     (a-b).round(2)
 end
 
-#Funcao multiplicar
-def multiplicar(a,b)
+#Multiply function
+def multiply(a,b)
     (a*b).round(2)
 end
 
-#Funcao dividir
-def dividir(a,b)
+#divide function
+def divide(a,b)
     if b != 0
         (a/b).round(2)
     else

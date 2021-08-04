@@ -1,4 +1,4 @@
-def imprime_menu
+def show_menu
     puts ''
     puts  "|-----------------------------------------|"
     puts  "|              CALCULADORA                |"
@@ -15,19 +15,19 @@ def imprime_menu
     print "|   Operação: "
 end
 
-def imprime_saudacao
+def show_greetings
     puts ''
     puts '      Olá, seja bem vindo à Calculadora!    '
 end
 
-def pergunta_deseja_continuar
+def ask_calculate_again
     puts ''
     puts ''
     puts  "|         Deseja continuar?               |"
     puts  "|       Pressione S para Sim              |"
     puts  "|       Pressione N para Não              |"
-    opcao = gets.chomp
-    if opcao.upcase == "N"
+    option = gets.chomp
+    if option.upcase == "N"
         exit
     end
 end
