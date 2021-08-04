@@ -21,18 +21,18 @@ def divided(num1, num2)
   num1 / num2
 end
 
-def limpar
+def clean
   puts 'Você resetou a calculadora.'
   @val1 = 0
   true
 end
 
-def sair
+def exitx
   puts 'Calculadora Tiamat encerrada.'
   exit(0)
 end
 
-def operador_valido
+def valid_operator
   operadores = ['+', '-', '*', '/', 'c', 'x']
   true if operadores.include?(@operador.downcase)
 end
@@ -66,9 +66,9 @@ loop do
   if @val1.zero?
     puts 'Digite o primeiro valor e tecle ENTER para confirmar:'
     @val1 = gets.chomp
-    sair if @val1.downcase == 'x'
+    exitx if @val1.downcase == 'x'
 
-    next if @val1.downcase == 'c' && limpar
+    next if @val1.downcase == 'c' && clean
 
     @val1[","] = "." if @val1.include?(",")
   end
@@ -78,19 +78,19 @@ loop do
   @operador = gets.chomp
   #Valida o operador digitado pelo usuário
   loop do
-    break if operador_valido
+    break if valid_operator
     puts 'Operador inválido.'
     puts 'Escolha um dos operadores: + - * ou / e tecle ENTER para confirmar:'
     @operador = gets.chomp  
   end
 
-  sair if @operador.downcase == 'x'
-  next if @operador.downcase == 'c' && limpar
+  exitx if @operador.downcase == 'x'
+  next if @operador.downcase == 'c' && clean
   
   puts 'Digite o segundo valor e tecle ENTER para confirmar:'
   @val2 = gets.chomp
-  sair if @val2.downcase == 'x'
-  next if @val2.downcase == 'c' && limpar
+  exitx if @val2.downcase == 'x'
+  next if @val2.downcase == 'c' && clean
 
   if @val2.to_i.zero? && @operador == '/'
     puts 'Não é possível fazer a divisão por zero'
