@@ -16,6 +16,10 @@ class Calc
 
   def divide(num1, num2)
     # fazer divisao
-    num1 / num2
+    if num2 == 0
+      return puts 'Não existe divisão por zero'
+    else
+      num1 / num2
+    end 
   end
 end
