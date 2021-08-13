@@ -2,7 +2,7 @@
 
 # Add, modify and delete entries
 # Search, visualize and print entries
-# Each entry must have name, contact (phone # or e-mail) and CPF
+# Each entry must have name, entry (phone # or e-mail) and CPF
 # Gems for text formatting, colour, special carachters etc on rubygems.org
 
 require 'io/console'                                                                                                       
@@ -63,6 +63,7 @@ end
 
 start_program
 puts "\e[H\e[2J"
+
 puts ''
 puts '# 01010010 01010101 01000010 01011001  01010000 01001000 01001111 01001110 01000101 01000010 01001111 01001111 01001011 #'
 puts '#                                                                                                                       #'
@@ -74,9 +75,39 @@ puts '#                                                                         
 puts '# 01010010 01010101 01000010 01011001  01010000 01001000 01001111 01001110 01000101 01000010 01001111 01001111 01001011 #'
 puts '#                                                                                                                       #'
 puts '#                                                    MAIN MENU'
-puts '#                                             PRESS THE DESIRED OPTION'
 puts ''
 puts '                                              1. Search for an entry'
 puts '                                              2. Add an entry'
 puts '                                              3. Print all entries'
 puts '                                              4. Exit'
+puts ''
+print "Enter your choice: "
+
+loop do
+  input = gets
+    case input
+    when '1'
+      print "Search term: "
+      search = gets.chomp
+    when '2'
+      add_entry
+    when '3'
+      print_contacts
+    when '4'
+      save()
+      break  
+    end
+    puts "\n"
+  end
+  
+def add_entry
+  entry = Contact.new # referencia arquivo contact.rb (mudar para entry.rb)
+  print "Name: "
+  entry.name = gets.chomp
+  
+  print "Contact (phone or e-mail): "
+  entry.contact = gets.chomp
+
+  print "CPF: "
+  entry.cpf = gets.chomp
+end
