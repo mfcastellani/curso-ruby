@@ -76,9 +76,9 @@ puts '# 01010010 01010101 01000010 01011001  01010000 01001000 01001111 01001110
 puts '#                                                                                                                       #'
 puts '#                                                    MAIN MENU'
 puts ''
-puts '                                              1. Search for an contact'
-puts '                                              2. Add an contact'
-puts '                                              3. Print all entries'
+puts '                                              1. Search for a contact'
+puts '                                              2. Add a contact'
+puts '                                              3. Print all contacts'
 puts '                                              4. Exit'
 puts ''
 print "Enter your choice: "
@@ -94,10 +94,9 @@ loop do
     when '3'
       print_contacts
     when '4'
-      save()
       break  
     end
-    puts "\n"
+   puts "\n"
   end
   
 def add_contact
