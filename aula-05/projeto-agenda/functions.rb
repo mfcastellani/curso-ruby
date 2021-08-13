@@ -8,18 +8,6 @@
 
 require 'cpf_cnpj'
 
-# Método para exibir mensagem de boas vindas. 
-# Talvez o local correto para este método seja no visual.rb
-def welcome_msg
-
-end
-
-#Método para mostar o menu e suas opções(Innserir, Alterar, Excluir, Consultar, Listar Todos e Sair) (formato e visualmente elegante)
-# Talvez o local correto para este método seja no visual.rb
-def show_menu
-
-end
-
 # Criar hash para armazenar dados da agenda
 
 # Método para inserir um contato na agenda (deve receber NOME, EMAIL/TELEFONE, CPF válido), verificar se o nome/cpf já esta cadastrado
