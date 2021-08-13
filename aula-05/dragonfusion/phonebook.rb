@@ -2,7 +2,7 @@
 
 # Add, modify and delete entries
 # Search, visualize and print entries
-# Each entry must have name, entry (phone # or e-mail) and CPF
+# Each contact must have name, contact (phone # or e-mail) and CPF
 # Gems for text formatting, colour, special carachters etc on rubygems.org
 
 require 'io/console'                                                                                                       
@@ -76,8 +76,8 @@ puts '# 01010010 01010101 01000010 01011001  01010000 01001000 01001111 01001110
 puts '#                                                                                                                       #'
 puts '#                                                    MAIN MENU'
 puts ''
-puts '                                              1. Search for an entry'
-puts '                                              2. Add an entry'
+puts '                                              1. Search for an contact'
+puts '                                              2. Add an contact'
 puts '                                              3. Print all entries'
 puts '                                              4. Exit'
 puts ''
@@ -90,7 +90,7 @@ loop do
       print "Search term: "
       search = gets.chomp
     when '2'
-      add_entry
+      add_contact
     when '3'
       print_contacts
     when '4'
@@ -100,14 +100,14 @@ loop do
     puts "\n"
   end
   
-def add_entry
-  entry = Contact.new # referencia arquivo contact.rb (mudar para entry.rb)
+def add_contact
+  contact = Contact.new # references file contact.rb
   print "Name: "
-  entry.name = gets.chomp
+  contact.name = gets.chomp
   
   print "Contact (phone or e-mail): "
-  entry.contact = gets.chomp
+  contact.contact = gets.chomp
 
   print "CPF: "
-  entry.cpf = gets.chomp
+  contact.cpf = gets.chomp
 end
