@@ -49,8 +49,17 @@ end
 
 # Método para deletar um contato na agenda (deve receber CPF)
 def delete(cpf)
-
+  if  @contacts.any? { |item| item[:cpf] == cpf}
+    @contacts.map { |item| 
+      @contacts.delete(item)
+      puts "Cpf #{cpf} excluído com sucesso."
+      break
+    }
+  else 
+    puts "Não foi possível excluir o Cpf #{cpf}"
+  end
 end
+
 
 # Método para consultar um contato na agenda (deve receber NOME ou EMAIL/TELEFONE ou CPF) e imprimir na tela os dados do contato
 def view(text_search)
