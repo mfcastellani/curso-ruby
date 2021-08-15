@@ -7,5 +7,6 @@ loop do
     handler.option('Incluir uma pessoa na agenda') { |_selection| new_person }
     handler.option('Alterar dados de uma pessoa') { |selection| selection }
     handler.option('Excluir os dados de uma pessoa') { |selection| selection }
+    handler.option('Sair') { |selection| selection }
   end
 end
