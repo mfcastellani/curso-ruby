@@ -3,6 +3,7 @@
 # Preferencialmente ficar bem arquitetado para o usuário poder entrar, sair e acessar facilmente as funções da agenda
 
 require_relative "functions.rb"
+require_relative "visual.rb"
 
 # popula a agenda com os contatos iniciais
 populate
