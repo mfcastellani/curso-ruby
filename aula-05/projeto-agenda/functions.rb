@@ -59,12 +59,14 @@ end
 def delete(cpf)
   if @contacts.any? { |item| item[:cpf] == cpf}
     @contacts.map { |item| 
-      @contacts.delete(item)
-      puts "Cpf #{cpf} excluído com sucesso."
-      break
+      if item[:cpf] == cpf
+        @contacts.delete(item)
+        puts "Cpf #{cpf} excluído com sucesso."
+        break
+      end
     }
   else 
-    puts "Não foi possível excluir o Cpf #{cpf}"
+    puts "O Cpf #{cpf} não foi encontrado."
   end
 end
 
