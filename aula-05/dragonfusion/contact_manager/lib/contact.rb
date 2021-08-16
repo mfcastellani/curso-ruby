@@ -1,4 +1,5 @@
 require 'cpf_cnpj'
+require 'cli/ui'
 
 @address_book = []
 
@@ -15,7 +16,7 @@ def new_contact
   else
     insert_contact = { name: name, contact: contact, cpf: cpf }
     @address_book << insert_contact
-    puts "Inclusão de #{name} com o contato #{contact} e CPF #{cpf} feita com sucesso!"
+    puts CLI::UI.fmt "Inclusão de {{green:#{name}}} com o contato {{green:#{contact} }} e CPF {{green:#{cpf} }} feita com sucesso!"
   end
 end
 
