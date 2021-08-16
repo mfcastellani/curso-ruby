@@ -1,12 +1,35 @@
 GEM
+  remote: https://rubygems.org/
   specs:
+    cli-ui (1.5.1)
+    colorize (0.8.1)
     cpf_cnpj (0.5.0)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
+    strings (0.2.1)
+      strings-ansi (~> 0.2)
+      unicode-display_width (>= 1.5, < 3.0)
+      unicode_utils (~> 1.4)
+    strings-ansi (0.2.0)
+    tty-box (0.7.0)
+      pastel (~> 0.8)
+      strings (~> 0.2.0)
+      tty-cursor (~> 0.7)
+    tty-color (0.6.0)
+    tty-cursor (0.7.1)
+    tty-font (0.5.0)
+    unicode-display_width (2.0.0)
+    unicode_utils (1.4.0)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  cli-ui
+  colorize
   cpf_cnpj (~> 0.5.0)
+  tty-box
+  tty-font
 
 BUNDLED WITH
    2.2.25
