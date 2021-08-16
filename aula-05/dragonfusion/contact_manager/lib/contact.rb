@@ -5,7 +5,7 @@ require 'cli/ui'
 
 def new_contact
   puts CLI::UI.fmt '{{blue:Insira o nome do contato:}}'
-  name = gets.chomp
+  name = gets.chomp.capitalize
   puts CLI::UI.fmt '{{blue:Insira seu telefone ou e-mail:}}'
   contact = gets.chomp
   puts CLI::UI.fmt '{{blue:Insira o seu CPF:}}'
@@ -21,13 +21,14 @@ def new_contact
 end
 
 def listing_all_contacts
-  puts CLI::UI.fmt '{{yellow:Listando todos os contato:}}'
+  puts CLI::UI.fmt '{{bold:Listando todos os contato:}}'
+  puts ''
   @address_book.each do |contact|
-    puts "Nome: #{contact[:name]} | Contato: #{contact[:contact]} | CPF: #{contact[:cpf]}"
+    puts CLI::UI.fmt "{{bold:Nome: }}{{cyan:#{contact[:name]} }}{{bold:|}} {{bold:Contato: }}{{cyan:#{contact[:contact]} }}{{bold:|}} {{bold:CPF: }}{{cyan:#{contact[:cpf]}}}"
   end
 end
 
 def exit_cm
-  puts 'Saindo do Contact Manager...'
+  puts CLI::UI.fmt '{{bold:Saindo do Contact Manager...}}'
   exit(0)
 end
