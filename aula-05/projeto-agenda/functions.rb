@@ -9,6 +9,7 @@
 require 'cpf_cnpj'
 
 # Criar hash para armazenar dados da agenda
+@contacts = [ ]
 
 # Método para inserir um contato na agenda (deve receber NOME, EMAIL/TELEFONE, CPF válido), verificar se o nome/cpf já esta cadastrado
 def insert_name
@@ -32,13 +33,20 @@ def insert_cpf
   puts 'Insira o CPF do contato'
   cpf_test = gets.chomp
   if CPF.valid? cpf_test
-    cpf_test['-'] = ''
     @cpf = cpf_test
   else
     puts 'CPF inválido. Tente outra vez.'
     insert_cpf
   end
   @cpf
+end
+
+def create_contact
+  name = insert_name
+  cpf = insert_cpf
+  phone = insert_phone
+  contact_hash = {:name => name, :phone => phone, :cpf => cpf}
+  @contacts << contact_hash 
 end
 
 # Método para editar um contato na agenda (deve receber NOME, EMAIL/TELEFONE, CPF), localizar o contato pelo cpf e alterar os dados, 
@@ -49,7 +57,7 @@ end
 
 # Método para deletar um contato na agenda (deve receber CPF)
 def delete(cpf)
-  if  @contacts.any? { |item| item[:cpf] == cpf}
+  if @contacts.any? { |item| item[:cpf] == cpf}
     @contacts.map { |item| 
       @contacts.delete(item)
       puts "Cpf #{cpf} excluído com sucesso."
@@ -60,16 +68,16 @@ def delete(cpf)
   end
 end
 
-
 # Método para consultar um contato na agenda (deve receber NOME ou EMAIL/TELEFONE ou CPF) e imprimir na tela os dados do contato
 def view(text_search)
-
+   
 end
 
 # Método para listar todos os contatos da agenda, imprimir todos os contatos na tela de maneira organizada e formatada
 def list
-  @contacts.map { |item| item }
-   puts "Nome: #{@name} - Telefone: #{@phone} - Cpf: #{@cpf}"
+  @contacts.each do |item|
+    puts "Nome: #{item[:name]} - Telefone: #{item[:phone]} - Cpf: #{item[:cpf]}"
+  end
 end
 
 # Método para popular inicialmente contatos na agenda, criar um hash e popular com dados de alguns contatos para que a agenda não inicie vazia
