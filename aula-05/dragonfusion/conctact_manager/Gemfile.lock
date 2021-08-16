@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    cli-ui (1.5.1)
+    cpf_cnpj (0.5.0)
+    json (2.5.1)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  cli-ui (~> 1.5.1)
+  cpf_cnpj (~> 0.5.0)
+  json (~> 2.5, >= 2.5.1)
+
+BUNDLED WITH
+   2.2.9
