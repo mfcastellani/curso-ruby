@@ -52,7 +52,25 @@ end
 # Método para editar um contato na agenda (deve receber NOME, EMAIL/TELEFONE, CPF), localizar o contato pelo cpf e alterar os dados, 
 # verificar se já existe contato com mesmo nome
 def edit(name, contact, cpf)
-
+  if @contact.any? { |item| item[:cpf] == cpf}
+    @contact.map { |item|
+      puts ‘Insira o novo nome ou deixe em branco para não alterar e tecle ENTER: ’
+      
+      name = gets.chomp.to_s
+      puts ‘Insira o novo telefone ou deixe em branco para não alterar e tecle ENTER: ’
+      
+      phone = gets.chomp.to_s
+      if not name.empty?
+        item[:name] = name
+      end
+      
+      if not phone.empty?
+        item[:phone] = phone
+      end
+    }
+  else
+    puts “Não foi possível localizar o contato com o CPF #{cpf}”
+  end
 end
 
 # Método para deletar um contato na agenda (deve receber CPF)
