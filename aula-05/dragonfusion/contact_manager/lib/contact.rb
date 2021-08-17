@@ -19,6 +19,13 @@ def new_contact
     @address_book << insert_contact
     puts CLI::UI.fmt "{{v}} Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf}}} feita com sucesso!"
   end
+    if @address_book.any? { |contact| contact[:cpf] == cpf }
+      raise 'Este CPF já está cadastrado na sua agenda!'
+    else
+      insert_contact = { name: name, contact: contact, cpf: cpf }
+      @address_book << insert_contact
+      puts CLI::UI.fmt "Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf}}} feita com sucesso!"
+    end
 end
 
 def listing_all_contacts
