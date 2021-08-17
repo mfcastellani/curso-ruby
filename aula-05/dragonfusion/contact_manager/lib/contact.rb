@@ -1,27 +1,23 @@
 require 'cpf_cnpj'
 require 'cli/ui'
+require_relative './cpf_treatment'
 
 @address_book = []
 
 def new_contact
   puts CLI::UI.fmt '{{blue:Insira o nome do contato:}}'
   name = gets.chomp.capitalize
-  puts CLI::UI.fmt '{{blue:Insira seu telefone ou e-mail:}}'
+  puts CLI::UI.fmt '{{blue:Insira o telefone ou e-mail do contato:}}'
   contact = gets.chomp
-  puts CLI::UI.fmt '{{blue:Insira o seu CPF:}}'
-  cpf_prompt = gets.chomp
-  cpf = CPF.new(cpf_prompt)
+  puts CLI::UI.fmt '{{blue:Insira o CPF do contato:}}'
+  cpf = cpf_valid
 
-  raise CLI::UI.fmt '{{red: CPF inválido. Verifique o dado e tente novamente}}' if cpf.valid? != true
-
-  cpf_formatted = cpf.formatted
-
-  if @address_book.any? { |contact| contact[:cpf] == cpf_formatted }
+  if @address_book.any? { |contact| contact[:cpf] == cpf }
     raise CLI::UI.fmt '{{red: Este CPF já está cadastrado na sua agenda}}'
   else
-    insert_contact = { name: name, contact: contact, cpf: cpf_formatted }
+    insert_contact = { name: name, contact: contact, cpf: cpf }
     @address_book << insert_contact
-    puts CLI::UI.fmt "{{v}} Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf_formatted}}} feita com sucesso!"
+    puts CLI::UI.fmt "{{v}} Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf}}} feita com sucesso!"
   end
 end
 
