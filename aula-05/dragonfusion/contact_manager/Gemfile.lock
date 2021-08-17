@@ -17,11 +17,11 @@ GEM
       tty-cursor (~> 0.7)
     tty-color (0.6.0)
     tty-cursor (0.7.1)
-    tty-font (0.5.0)
     unicode-display_width (2.0.0)
     unicode_utils (1.4.0)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -29,7 +29,6 @@ DEPENDENCIES
   cpf_cnpj (~> 0.5.0)
   json (~> 2.5, >= 2.5.1)
   tty-box (~> 0.7.0)
-  tty-font (~> 0.5.0)
 
 BUNDLED WITH
    2.2.9
