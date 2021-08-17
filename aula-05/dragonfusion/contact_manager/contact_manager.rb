@@ -1,18 +1,15 @@
 require 'cli/ui'
 require_relative './lib/contact'
 
-puts "\e[H\e[2J"
-
-loop do 
-  puts '*** RUBY CONTACT MANAGER ***'
+loop do
+  puts ''
   CLI::UI::Prompt.ask('O que você deseja fazer?') do |handler|
-    handler.option('Buscar um contato') { |selection| selection }
-    handler.option('Incluir um contato') { |_selection| new_contact }
-    handler.option('Modificar um contato') { |selection| selection }
-    handler.option('Excluir um contato') { |selection| selection }
-    handler.option('Exibir todos os contatos') { |_selection| listing_all_contacts }
-    handler.option('Sair') { |_selection| exit_cm }
+    handler.option('Consultar todos os registros') { listing_all_contacts }
+    handler.option('Incluir uma pessoa na agenda') { new_contact }
+    handler.option('Alterar dados de uma pessoa') { |selection| selection }
+    handler.option('Excluir os dados de uma pessoa') { |selection| selection }
+    handler.option('Sair') { exit_cm }
   end
 rescue StandardError => e
-  puts "Ocorreu um erro: #{e.message}"
+  puts CLI::UI.fmt "⚠️ {{underline:Ocorreu um erro:}}#{e.message}"
 end
