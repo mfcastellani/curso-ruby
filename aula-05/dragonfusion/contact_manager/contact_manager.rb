@@ -1,5 +1,12 @@
 require 'cli/ui'
+require 'tty-box'
 require_relative './lib/contact'
+
+box = TTY::Box.frame(width: 80, height: 4, align: :center, padding: 1) do
+  'Contact Manager'
+end
+
+print box
 
 loop do
   puts ''
