@@ -5,7 +5,7 @@ def change_contact_name_by_cpf
 
   e = @address_book.index
   contact_index = e.each { |contact| contact[:cpf] == cpf }
-  puts CLI::UI.fmt "{{bold:Digite o novo nome para o CPF:}}{{green:#{cpf}}}"
+  puts CLI::UI.fmt "{{bold:Digite o novo nome para o CPF: }}{{green:#{cpf}}}"
   new_name = gets.chomp
   raise CLI::UI.fmt '{{red: O campo novo nome não pode ser vazio. Tente novamente.}}' if new_name.empty?
 
