@@ -1,6 +1,7 @@
 require 'cpf_cnpj'
 require 'cli/ui'
 require_relative './cpf_handler'
+require_relative './change_contact_name'
 
 @address_book = []
 
@@ -27,6 +28,10 @@ def listing_all_contacts
   @address_book.each do |contact|
     puts CLI::UI.fmt "{{bold:Nome: }}{{cyan:#{contact[:name]} }}{{bold:|}} {{bold:Contato: }}{{cyan:#{contact[:contact]} }}{{bold:|}} {{bold:CPF: }}{{cyan:#{contact[:cpf]}}}"
   end
+end
+
+def change_contact_name
+  change_contact_name_by_cpf
 end
 
 def change_contact
