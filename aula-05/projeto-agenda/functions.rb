@@ -51,25 +51,25 @@ end
 
 # Método para editar um contato na agenda (deve receber NOME, EMAIL/TELEFONE, CPF), localizar o contato pelo cpf e alterar os dados, 
 # verificar se já existe contato com mesmo nome
-def edit(name, contact, cpf)
-  if @contact.any? { |item| item[:cpf] == cpf}
-    @contact.map { |item|
-      puts ‘Insira o novo nome ou deixe em branco para não alterar e tecle ENTER: ’
-      
+def edit
+  puts 'Digite o CPF do contato que deseja alterar e tecle ENTER:'
+  cpf = gets.chomp.to_s
+
+  if @contacts.any? { |item| item[:cpf] == cpf}
+    @contacts.map { |item|
+      puts 'Insira o novo nome ou deixe em branco para não alterar e tecle ENTER:'
       name = gets.chomp.to_s
-      puts ‘Insira o novo telefone ou deixe em branco para não alterar e tecle ENTER: ’
       
-      phone = gets.chomp.to_s
-      if not name.empty?
-        item[:name] = name
-      end
+      puts 'Insira o novo telefone ou deixe em branco para não alterar e tecle ENTER:'
+      phone = gets.chomp
       
-      if not phone.empty?
-        item[:phone] = phone
-      end
+      item[:name] = name if not name.empty?
+      
+      item[:phone] = phone if not phone.empty?
+      break  
     }
   else
-    puts “Não foi possível localizar o contato com o CPF #{cpf}”
+    puts "Não foi possível localizar o contato com o CPF #{cpf}"
   end
 end
 
@@ -109,15 +109,15 @@ end
 
 # Método para popular inicialmente contatos na agenda, criar um hash e popular com dados de alguns contatos para que a agenda não inicie vazia
 def populate
-  @contacts = [ {:name => "Abraão", :phone => 74405489739, :cpf => 36851738120}, 
-                {:name => "Ana Paula", :phone => 75634079546, :cpf => 83187351964},
-                {:name => "Breno", :phone => 47453162390, :cpf => 42220667456},
-                {:name => "Bruno", :phone => 87643647953, :cpf => 15848746192}, 
-                {:name => "Caio", :phone => 78837768607, :cpf => 63736749406},
-                {:name => "Douglas", :phone => 70278044476, :cpf => 87156691570},
-                {:name => "Franco", :phone => 34147502570, :cpf => 35310255460}, 
-                {:name => "João Gilberto", :phone => 34490740864, :cpf => 21539588300},
-                {:name => "João Príscio", :phone => 63388057906, :cpf => 23668275807},
-                {:name => "Marcelo", :phone => 87393903012, :cpf => 34693122068}
+  @contacts = [ {:name => "Abraão", :phone => 74405489739, :cpf => '36851738120'}, 
+                {:name => "Ana Paula", :phone => 75634079546, :cpf => '83187351964'},
+                {:name => "Breno", :phone => 47453162390, :cpf => '42220667456'},
+                {:name => "Bruno", :phone => 87643647953, :cpf => '15848746192'}, 
+                {:name => "Caio", :phone => 78837768607, :cpf => '63736749406'},
+                {:name => "Douglas", :phone => 70278044476, :cpf => '87156691570'},
+                {:name => "Franco", :phone => 34147502570, :cpf => '35310255460'}, 
+                {:name => "João Gilberto", :phone => 34490740864, :cpf => '21539588300'},
+                {:name => "João Príscio", :phone => 63388057906, :cpf => '23668275807'},
+                {:name => "Marcelo", :phone => 87393903012, :cpf => '34693122068'}
   ]
 end

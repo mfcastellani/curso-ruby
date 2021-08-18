@@ -16,8 +16,4 @@ loop do
   # Mostrar menu
   show_menu
 
-  # Pegar a opção escolhida pelo usuário
-  option = gets.chomp
-
-  # Laço para realizar a operção de acordo com a opção selecionada pelo usuário
 end
