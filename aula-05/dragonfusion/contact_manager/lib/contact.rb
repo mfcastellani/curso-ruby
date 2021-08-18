@@ -1,15 +1,16 @@
 require 'cpf_cnpj'
 require 'cli/ui'
+require_relative './cpf_handler'
 
 @address_book = []
 
 def new_contact
   puts CLI::UI.fmt '{{blue:Insira o nome do contato:}}'
   name = gets.chomp.capitalize
-  puts CLI::UI.fmt '{{blue:Insira seu telefone ou e-mail:}}'
+  puts CLI::UI.fmt '{{blue:Insira o telefone ou e-mail do contato:}}'
   contact = gets.chomp
-  puts CLI::UI.fmt '{{blue:Insira o seu CPF:}}'
-  cpf = gets.chomp
+  puts CLI::UI.fmt '{{blue:Insira o CPF do contato:}}'
+  cpf = cpf_valid
 
   if @address_book.any? { |contact| contact[:cpf] == cpf }
     raise CLI::UI.fmt '{{red: Este CPF já está cadastrado na sua agenda}}'
@@ -18,13 +19,6 @@ def new_contact
     @address_book << insert_contact
     puts CLI::UI.fmt "{{v}} Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf}}} feita com sucesso!"
   end
-    if @address_book.any? { |contact| contact[:cpf] == cpf }
-      raise 'Este CPF já está cadastrado na sua agenda!'
-    else
-      insert_contact = { name: name, contact: contact, cpf: cpf }
-      @address_book << insert_contact
-      puts CLI::UI.fmt "Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf}}} feita com sucesso!"
-    end
 end
 
 def listing_all_contacts
@@ -33,6 +27,31 @@ def listing_all_contacts
   @address_book.each do |contact|
     puts CLI::UI.fmt "{{bold:Nome: }}{{cyan:#{contact[:name]} }}{{bold:|}} {{bold:Contato: }}{{cyan:#{contact[:contact]} }}{{bold:|}} {{bold:CPF: }}{{cyan:#{contact[:cpf]}}}"
   end
+end
+
+def change_contact
+  puts ''
+  puts CLI::UI.fmt '{{bold:Digite o número do CPF do contato que deseja alterar:}}'
+  cpf = cpf_valid
+  # cpf_exist = @address_book.any? { |contact| contact[:cpf] == cpf }
+  e = @address_book.index
+  contact_index = e.each { |contact| contact[:cpf] == cpf }
+  puts CLI::UI.fmt "{{bold:Digite o novo nome para o CPF:}}{{green:#{cpf}}}"
+  new_name = gets.chomp
+  raise CLI::UI.fmt '{{red: O campo novo nome não pode ser vazio. Tente novamente.}}' if new_name.empty?
+
+  puts CLI::UI.fmt "{{bold:Digite o novo contato para o CPF:}}{{green:#{cpf}}}"
+  new_contact = gets.chomp
+  raise CLI::UI.fmt '{{red:O campo novo contato não pode ser vazio. Tente novamente}}' if new_contact.empty?
+
+  # e = @address_book.each_index
+  # a = e.each { |index| puts "#{index} #{@address_book[index]}" }
+  b = { name: new_name, contact: new_contact }
+  c = @address_book[contact_index].merge!(b)
+  puts ''
+  puts CLI::UI.fmt "{{bold:Sucesso}}{{v}}: Você alterou o CPF {{cyan:#{c[:cpf]}}} para o nome {{cyan:#{c[:name]}}} e contato {{cyan:#{c[:contact]}}}"
+  # puts CLI::UI.fmt "{{bold:Nome: }}{{cyan:#{contact[:name]} }}{{bold:|}} {{bold:Contato: }}{{cyan:#{contact[:contact]} }}{{bold:|}} {{bold:CPF: }}{{cyan:#{contact[:cpf]}}}"
+  raise CLI::UI.fmt '{{red: CPF não encontrado. Verifique o dado e tente novamente}}' if contact_index = nil?
 end
 
 def exit_cm
