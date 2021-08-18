@@ -3,6 +3,7 @@ require 'cli/ui'
 require_relative './cpf_handler'
 require_relative './change_contact_name'
 require_relative './change_form_contact'
+require_relative './delete_contact'
 
 @address_book = []
 
@@ -24,6 +25,7 @@ def new_contact
 end
 
 def listing_all_contacts
+  puts ''
   puts CLI::UI.fmt '{{bold:Listando todos os contato:}}'
   puts ''
   @address_book.each do |contact|
@@ -60,6 +62,10 @@ def change_contact
   puts CLI::UI.fmt "{{bold:Sucesso}}{{v}}: Você alterou o CPF {{cyan:#{c[:cpf]}}} para o nome {{cyan:#{c[:name]}}} e contato {{cyan:#{c[:contact]}}}"
 
   raise CLI::UI.fmt '{{red: CPF não encontrado. Verifique o dado e tente novamente}}' if contact_index = nil?
+end
+
+def delete_contact
+  delete_contact_by_cpf
 end
 
 def exit_cm
