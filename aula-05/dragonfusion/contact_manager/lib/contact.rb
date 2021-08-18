@@ -2,6 +2,7 @@ require 'cpf_cnpj'
 require 'cli/ui'
 require_relative './cpf_handler'
 require_relative './change_contact_name'
+require_relative './change_form_contact'
 
 @address_book = []
 
@@ -34,6 +35,10 @@ def change_contact_name
   change_contact_name_by_cpf
 end
 
+def change_form_contact
+  change_form_contact_by_cpf
+end
+
 def change_contact
   puts ''
   puts CLI::UI.fmt '{{bold:Digite o número do CPF do contato que deseja alterar:}}'
@@ -41,11 +46,11 @@ def change_contact
 
   e = @address_book.index
   contact_index = e.each { |contact| contact[:cpf] == cpf }
-  puts CLI::UI.fmt "{{bold:Digite o novo nome para o CPF:}}{{green:#{cpf}}}"
+  puts CLI::UI.fmt "{{bold:Digite o novo nome para o CPF: }}{{green:#{cpf}}}"
   new_name = gets.chomp
   raise CLI::UI.fmt '{{red: O campo novo nome não pode ser vazio. Tente novamente.}}' if new_name.empty?
 
-  puts CLI::UI.fmt "{{bold:Digite o novo contato para o CPF:}}{{green:#{cpf}}}"
+  puts CLI::UI.fmt "{{bold:Digite o novo contato para o CPF: }}{{green:#{cpf}}}"
   new_contact = gets.chomp
   raise CLI::UI.fmt '{{red:O campo novo contato não pode ser vazio. Tente novamente}}' if new_contact.empty?
 

@@ -14,6 +14,7 @@ loop do
     handler.option('Consultar todos os registros') { listing_all_contacts }
     handler.option('Incluir uma pessoa na agenda') { new_contact }
     handler.option('Alterar apenas o nome de uma pessoa na agenda') { change_contact_name }
+    handler.option('Alterar apenas o meio de contato de uma pessoa na agenda') { change_form_contact }
     handler.option('Alterar nome e contato de uma pessoa') { change_contact }
     handler.option('Excluir os dados de uma pessoa') { |selection| selection }
     handler.option('Sair') { exit_cm }
