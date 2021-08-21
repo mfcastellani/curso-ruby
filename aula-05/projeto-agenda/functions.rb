@@ -7,9 +7,18 @@
 # consulta de dados para impressão
 
 require 'cpf_cnpj'
+require 'sqlite3'
 
-# Criar hash para armazenar dados da agenda
-@contacts = [ ]
+# Criar banco de dados
+@db = SQLite3::Database.new "projeto-agenda.db"
+
+@rows = @db.execute <<-SQL
+  create table if not exists contacts (
+    name varchar(50),
+    phone int,
+    cpf int
+  );
+  SQL
 
 # Método para inserir um contato na agenda (deve receber NOME, EMAIL/TELEFONE, CPF válido), verificar se o nome/cpf já esta cadastrado
 def insert_name
@@ -45,8 +54,9 @@ def create_contact
   name = insert_name
   cpf = insert_cpf
   phone = insert_phone
-  contact_hash = {:name => name, :phone => phone, :cpf => cpf}
-  @contacts << contact_hash 
+  # Execute inserts with parameter markers
+  @db.execute("INSERT INTO contacts (name, phone, cpf) 
+  VALUES (?, ?, ?)", [name, phone, cpf])
 end
 
 # Método para editar um contato na agenda (deve receber NOME, EMAIL/TELEFONE, CPF), localizar o contato pelo cpf e alterar os dados, 
@@ -102,8 +112,8 @@ end
 
 # Método para listar todos os contatos da agenda, imprimir todos os contatos na tela de maneira organizada e formatada
 def list
-  @contacts.each do |item|
-    puts "Nome: #{item[:name]} - Telefone: #{item[:phone]} - Cpf: #{item[:cpf]}"
+  @db.execute( "select * from contacts" ) do |row|
+    p row
   end
 end
 
