@@ -119,15 +119,6 @@ end
 
 # Método para popular inicialmente contatos na agenda, criar um hash e popular com dados de alguns contatos para que a agenda não inicie vazia
 def populate
-  @contacts = [ {:name => "Abraão", :phone => 74405489739, :cpf => '36851738120'}, 
-                {:name => "Ana Paula", :phone => 75634079546, :cpf => '83187351964'},
-                {:name => "Breno", :phone => 47453162390, :cpf => '42220667456'},
-                {:name => "Bruno", :phone => 87643647953, :cpf => '15848746192'}, 
-                {:name => "Caio", :phone => 78837768607, :cpf => '63736749406'},
-                {:name => "Douglas", :phone => 70278044476, :cpf => '87156691570'},
-                {:name => "Franco", :phone => 34147502570, :cpf => '35310255460'}, 
-                {:name => "João Gilberto", :phone => 34490740864, :cpf => '21539588300'},
-                {:name => "João Príscio", :phone => 63388057906, :cpf => '23668275807'},
-                {:name => "Marcelo", :phone => 87393903012, :cpf => '34693122068'}
-  ]
+  @db.execute("INSERT INTO contacts (name, phone, cpf) 
+            VALUES (?, ?, ?)", [ "Abraão", 74405489739 , 36851738120])
 end
