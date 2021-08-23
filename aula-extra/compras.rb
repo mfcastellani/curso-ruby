@@ -24,6 +24,11 @@ loop do
         lista_compras << item
         puts " Item #{item} adicionado com sucesso"
     end
-
+    
+    if opcao == '3'
+        lista_compras.each do |item|
+        puts "Item: #{item}"
+        end
+    end
 
 end
