@@ -25,5 +25,17 @@ loop do
         puts " Item #{item} adicionado com sucesso"
     end
 
+    if opcao == '2'
+      print "Digite o item a ser excluído: "
+      item = gets.chomp
+      lista_compras.delete(item)
+      puts "#{item} excluído da lista de compras"
+    end
+    
+    if opcao == '3'
+        lista_compras.each do |item|
+        puts "Item: #{item}"
+        end
+    end
 
 end
