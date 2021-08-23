@@ -18,4 +18,12 @@ loop do
         break
     end 
 
+    if opcao == '1'
+        print "Insira item a ser adicionado: "
+        item = gets.chomp
+        lista_compras << item
+        puts " Item #{item} adicionado com sucesso"
+    end
+
+
 end
