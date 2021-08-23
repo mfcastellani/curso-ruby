@@ -7,3 +7,15 @@ def menu
     puts "4- Sair do programa."
 end
 
+loop do
+    menu
+    print "Digite a opção: "
+    opcao = gets.chomp
+
+
+    if opcao == '4'
+        puts "Até mais!"
+        break
+    end 
+
+end
