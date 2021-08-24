@@ -2,7 +2,7 @@ require 'cli/ui'
 require 'tty-box'
 require_relative './lib/contact'
 
-box = TTY::Box.frame(width: 85, height: 5, align: :center, padding: 1) do
+box = TTY::Box.frame(width: 85, height: 4, align: :center, padding: 1) do
   'Contact Manager'
 end
 
@@ -16,7 +16,7 @@ loop do
     handler.option('Alterar apenas o nome de uma pessoa') { change_contact_name }
     handler.option('Alterar apenas o meio de contato de uma pessoa') { change_form_contact }
     handler.option('Alterar nome e contato de uma pessoa') { change_contact }
-    handler.option('Excluir os dados de uma pessoa') { delete_options }
+    handler.option('Excluir os dados de uma pessoa') { delete_contact }
     handler.option('Sair') { exit_cm }
   end
 rescue StandardError => e

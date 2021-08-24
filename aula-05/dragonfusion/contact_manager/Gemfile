@@ -2,4 +2,5 @@ source 'https://rubygems.org'
 
 gem 'cli-ui', '~> 1.5.1'
 gem 'cpf_cnpj', '~> 0.5.0'
+gem 'json', '~> 2.5', '>= 2.5.1'
 gem 'tty-box', '~> 0.7.0'
