@@ -4,10 +4,9 @@ require_relative './cpf_handler'
 require_relative './change_contact_name'
 require_relative './change_form_contact'
 require_relative './delete_contact'
+require_relative '../database/queries/search_one'
 
 class Contact
-  @address_book = []
-
   def new_contact
     puts CLI::UI.fmt '{{blue:Insira o nome do contato:}}'
     name = gets.chomp.capitalize
@@ -22,6 +21,16 @@ class Contact
       insert_contact = { name: name, contact: contact, cpf: cpf }
       @address_book << insert_contact
       puts CLI::UI.fmt "{{v}} Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf}}} feita com sucesso!"
+    end
+  end
+
+  def list_one_options
+    puts ''
+    CLI::UI::Prompt.ask('Consultar por👇:') do |handler|
+      handler.option('Nome') { search_one_by_name }
+      handler.option('CPF') { search_one_by_cpf }
+      handler.option('E-mail ou telefone') { search_one_by_means_contact }
+      handler.option('Voltar') {}
     end
   end
 
