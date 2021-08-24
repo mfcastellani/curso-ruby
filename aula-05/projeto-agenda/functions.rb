@@ -84,7 +84,10 @@ def edit
 end
 
 # Método para deletar um contato na agenda (deve receber CPF)
-def delete(cpf)
+def delete
+  print "Digite o CPF do contato que deseja excluir:"
+  cpf = gets.chomp
+  
   if @contacts.any? { |item| item[:cpf] == cpf}
     @contacts.map { |item| 
       if item[:cpf] == cpf
@@ -93,7 +96,7 @@ def delete(cpf)
         break
       end
     }
-  else 
+  else
     puts "O Cpf #{cpf} não foi encontrado."
   end
 end
