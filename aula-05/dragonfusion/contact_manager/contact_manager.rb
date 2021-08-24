@@ -15,6 +15,7 @@ loop do
   CLI::UI::Prompt.ask('Escolha qual ação quer realizar na agenda 👇') do |handler|
     handler.option('Incluir uma pessoa') { manager.new_contact }
     handler.option('Consultar todos os registros') { listing_all_contacts }
+    handler.option('Consultar dados de uma pessoa') { manager.list_one_options }
     handler.option('Alterar apenas o nome de uma pessoa') { change_contact_name }
     handler.option('Alterar apenas o meio de contato de uma pessoa') { change_form_contact }
     handler.option('Alterar nome e contato de uma pessoa') { change_contact }
