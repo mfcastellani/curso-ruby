@@ -99,15 +99,15 @@ def delete(cpf)
 end
 
 # Método para consultar um contato na agenda (deve receber NOME ou EMAIL/TELEFONE ou CPF) e imprimir na tela os dados do contato
-def view(search)
-  result = @contacts.select do |item|
-     item[:name] == search ||
-     item[:phone] == search ||
-     item[:cpf] == search
+def view
+  puts "Insira o CPF do contato que deseja consultar:"
+  search_contact = gets.chomp
+
+  @db.query("SELECT name, phone, cpf FROM contacts WHERE cpf =?", [search_contact]) do |search|
+    puts ''
+    p search.first
+    puts ''
   end
-  result.each do |r|
-    puts "Nome: #{r[:name]} - Telefone: #{r[:phone]} - Cpf: #{r[:cpf]}"
-  end 
 end
 
 # Método para listar todos os contatos da agenda, imprimir todos os contatos na tela de maneira organizada e formatada

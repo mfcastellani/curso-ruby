@@ -36,6 +36,7 @@ def show_menu
           handler.option('Alterar contato')   { |selection| edit      }   #Colocar aqui as funções correspondentes
           handler.option('Excluir contato')   { |selection| selection }   #Colocar aqui as funções correspondentes
           handler.option('Lista de contatos') { |selection| list      }   #Colocar aqui as funções correspondentes como neste exemplo
+          handler.option('Procurar contato') { |selection| view      }
           handler.option('Sair')              { |selection| exit(0)   }   #Encerra a agenda
         end
       end
