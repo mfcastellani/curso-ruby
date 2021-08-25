@@ -1,5 +1,6 @@
 require 'cli/ui'
 require 'tty-box'
+require 'sqlite3'
 
 def delete_options
     puts ''
@@ -23,13 +24,10 @@ def delete_contact_by_name
   puts ''
   name = gets.chomp
   puts CLI::UI.fmt '{{bold:Deletando contato...}}'
-  e = @address_book.index
-  contact_index = e.each { |contact| contact[:name] == name }
-  @address_book.delete_at(contact_index)
-  puts ''
+  db.execute('DELETE FROM contacts WHERE (name= ?) ', [name])
   puts CLI::UI.fmt '{{bold:Sucesso}}{{v}}:Você deletou o contato.}}'
 
-  raise CLI::UI.fmt '{{red:Nome não encontrado. Verifique o dado e tente novamente}}' if contact_index = nil?
+  raise CLI::UI.fmt '{{red:A exclusão não pode ser feita com o campo vazio, Tente novamente.}}' if name.empty?
 end
 
 def delete_contact_by_email_or_tel
@@ -38,13 +36,11 @@ def delete_contact_by_email_or_tel
   puts ''
   contact1 = gets.chomp
   puts CLI::UI.fmt '{{bold:Deletando contato...}}'
-  e = @address_book.index
-  contact_index = e.each { |contact| contact[:contact] == contact1 }
-  @address_book.delete_at(contact_index)
+  db.execute('DELETE FROM contacts WHERE (means_contact= ?) ', [contact1])
   puts ''
   puts CLI::UI.fmt '{{bold:Sucesso}}{{v}}:Você deletou o contato.}}'
 
-  raise CLI::UI.fmt '{{red:Dados não encontrados. Verifique os dados e tente novamente}}' if contact_index = nil?
+  raise CLI::UI.fmt '{{red:A exclusão não pode ser feita com o campo vazio, Tente novamente.}}' if contact1.empty?
 end
 
 def delete_contact_by_cpf
@@ -53,11 +49,9 @@ def delete_contact_by_cpf
   cpf = cpf_valid
   puts ''
   puts CLI::UI.fmt '{{bold:Deletando contato...}}'
-  e = @address_book.index
-  contact_index = e.each { |contact| contact[:cpf] == cpf }
-  @address_book.delete_at(contact_index)
+  db.execute('DELETE FROM contacts WHERE (cpf= ?) ', [cpf])
   puts ''
   puts CLI::UI.fmt '{{bold:Sucesso}}{{v}}:Você deletou o contato.}}'
 
-  raise CLI::UI.fmt '{{red:CPF não encontrado. Verifique o dado e tente novamente}}' if contact_index = nil?
+  raise CLI::UI.fmt '{{red:A exclusão não pode ser feita com o campo vazio, Tente novamente.}}' if cpf.empty?
 end
