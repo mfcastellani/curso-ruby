@@ -110,9 +110,10 @@ end
 
 # Método para listar todos os contatos da agenda, imprimir todos os contatos na tela de maneira organizada e formatada
 def list
-  @db.execute( "select * from contacts" ) do |row|
-    p row
-  end
+  p '[Nome]      -   [Telefone]      -  [CPF]'
+@db.execute( "select * from contacts" ) do |row|
+  p "#{row[0]}  -  #{row[1]}  -  #{row[2]}"
+end
 end
 
 # Método para popular inicialmente contatos na agenda, criar um hash e popular com dados de alguns contatos para que a agenda não inicie vazia
