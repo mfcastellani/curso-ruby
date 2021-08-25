@@ -18,6 +18,9 @@ def search_one_by_name
   puts ''
   puts CLI::UI.fmt '{{bold:Digite o nome da pessoa que deseja consultar:}}'
   name = gets.chomp
+
+  raise ' Campo nome vazio. tente de novo' if name.empty?
+
   puts ''
   puts CLI::UI.fmt '{{bold:Listando o contato selecionado:}}'
   puts ''
@@ -32,6 +35,9 @@ def search_one_by_means_contact
   puts ''
   puts CLI::UI.fmt '{{bold:Digite o e-mail ou telefone da pessoa que deseja consultar:}}'
   means_contact = gets.chomp
+
+  raise ' Campo e-mail ou telefone vazio. tente de novo' if means_contact.empty?
+
   puts ''
   puts CLI::UI.fmt '{{bold:Listando o contato selecionado:}}'
   puts ''
