@@ -14,14 +14,12 @@ class Contact
     contact = gets.chomp
     puts CLI::UI.fmt '{{blue:Insira o CPF do contato:}}'
     cpf = cpf_valid
-
-    already_exists = db.execute('SELECT name, means_contact, cpf from contacts where cpf= ? ', cpf)
-
-    if already_exists != []
+    
+    begin
+    db.execute('INSERT INTO contacts(name,means_contact,cpf) VALUES (?,?,?) ',[name,contact,cpf])
+    puts CLI::UI.fmt "{{v}} Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf}}} feita com sucesso!"
+    rescue SQLite3::Exception => e
       raise CLI::UI.fmt '{{red: Este CPF já está cadastrado na sua agenda}}'
-    else
-      db.execute('INSERT INTO contacts(name,means_contact,cpf) VALUES (?,?,?) ',[name,contact,cpf])
-      puts CLI::UI.fmt "{{v}} Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf}}} feita com sucesso!"
     end
   end
 
