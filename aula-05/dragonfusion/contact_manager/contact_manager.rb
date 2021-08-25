@@ -1,3 +1,9 @@
+#!/usr/bin/env ruby
+
+puts '== Instalando dependências =='
+system 'gem install bundler --conservative'
+system('bundle check') || system('bundle install')
+
 require 'cli/ui'
 require 'tty-box'
 require_relative './lib/contact'

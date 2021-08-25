@@ -15,11 +15,12 @@ class Contact
     puts CLI::UI.fmt '{{blue:Insira o CPF do contato:}}'
     cpf = cpf_valid
 
-    if @address_book.any? { |contact| contact[:cpf] == cpf }
+    already_exists = db.execute('SELECT name, means_contact, cpf from contacts where cpf= ? ', cpf)
+
+    if already_exists != []
       raise CLI::UI.fmt '{{red: Este CPF já está cadastrado na sua agenda}}'
     else
-      insert_contact = { name: name, contact: contact, cpf: cpf }
-      @address_book << insert_contact
+      db.execute('INSERT INTO contacts(name,means_contact,cpf) VALUES (?,?,?) ',[name,contact,cpf])
       puts CLI::UI.fmt "{{v}} Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf}}} feita com sucesso!"
     end
   end
@@ -36,7 +37,7 @@ class Contact
 
   def listing_all_contacts
     puts ''
-    puts CLI::UI.fmt '{{bold:Listando todos os contato:}}'
+    puts CLI::UI.fmt '{{bold:Listando todos os contatos:}}'
     puts ''
     @address_book.each do |contact|
       puts CLI::UI.fmt "{{bold:Nome: }}{{cyan:#{contact[:name]} }}{{bold:|}} {{bold:Contato: }}{{cyan:#{contact[:contact]} }}{{bold:|}} {{bold:CPF: }}{{cyan:#{contact[:cpf]}}}"
