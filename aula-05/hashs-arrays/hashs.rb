@@ -46,7 +46,6 @@ puts "Depois do delete #{array}"
 array.delete("Teste")
 puts "Depois do delete #{array}"
 
-
 puts
 array.push "String"
 puts array.inspect
