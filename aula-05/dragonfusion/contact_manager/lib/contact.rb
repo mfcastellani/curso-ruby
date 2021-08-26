@@ -14,12 +14,12 @@ class Contact
     contact = gets.chomp
     puts CLI::UI.fmt '{{blue:Insira o CPF do contato:}}'
     cpf = cpf_valid
-    
-    begin
-    db.execute('INSERT INTO contacts(name,means_contact,cpf) VALUES (?,?,?) ',[name,contact,cpf])
+
+    db.execute('INSERT INTO contacts(name,means_contact,cpf) VALUES (?,?,?) ', [name, contact, cpf])
     puts CLI::UI.fmt "{{v}} Inclusão de {{green:#{name}}} com o contato {{green:#{contact}}} e CPF {{green:#{cpf}}} feita com sucesso!"
-    rescue SQLite3::Exception => e
-      raise CLI::UI.fmt '{{red: Este CPF já está cadastrado na sua agenda}}'
+
+    if SQLite::ConstraintException:: UNIQUE constraint failed: contacts.cpf
+      raise 'CPF já cadastrado. Verifique os dados e tente novamente'
     end
   end
 
