@@ -59,28 +59,28 @@ def create_contact
   VALUES (?, ?, ?)", [name, phone, cpf])
 end
 
-# Método para editar um contato na agenda (deve receber NOME, EMAIL/TELEFONE, CPF), localizar o contato pelo cpf e alterar os dados
+# Método para editar um contato na agenda (deve receber NOME, EMAIL/TELEFONE, CPF), localizar o contato pelo cpf e alterar os dados, 
 # verificar se já existe contato com mesmo nome
 def edit
-	print "Digite o CPF do contato que deseja editar: "
-		cpf = gets.chomp
-  
-	contatos = @db.execute( "SELECT * from contacts WHERE cpf = ? ", [cpf])
-	if contatos.empty? 
-		puts "O Cpf #{cpf} não foi encontrado."
-	else contatos.each { |contato| p "#{contato[0]}  -  #{contato[1]}  -  #{contato[2]}" }
-  puts ""
-	end
+  puts 'Digite o CPF do contato que deseja alterar e tecle ENTER:'
+  cpf = gets.chomp.to_s
 
-	print "Digite o novo nome para o contato: "
-		nome = gets.chomp
-
- 
-	print "Digite o novo telefone para o contato: "
-		telefone = gets.chomp
- 
-  @db.execute("UPDATE contacts SET name =? , phone = ? WHERE cpf = ?", [nome, telefone, cpf])
-  puts "Os dados do contato foram atualizados."	
+  if @contacts.any? { |item| item[:cpf] == cpf}
+    @contacts.map { |item|
+      puts 'Insira o novo nome ou deixe em branco para não alterar e tecle ENTER:'
+      name = gets.chomp.to_s
+      
+      puts 'Insira o novo telefone ou deixe em branco para não alterar e tecle ENTER:'
+      phone = gets.chomp
+      
+      item[:name] = name if not name.empty?
+      
+      item[:phone] = phone if not phone.empty?
+      break  
+    }
+  else
+    puts "Não foi possível localizar o contato com o CPF #{cpf}"
+  end
 end
 
 # Método para deletar um contato na agenda (deve receber CPF)
