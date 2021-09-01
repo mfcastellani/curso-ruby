@@ -255,3 +255,72 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.4ms | Allocations: 4966)
 
 
+Started GET "/" for 127.0.0.1 at 2021-08-27 22:38:35 -0300
+  [1m[35m (26.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/francocaldas/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/francocaldas/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 83.3ms | Allocations: 526)
+Completed 200 OK in 547ms (Views: 264.1ms | ActiveRecord: 0.0ms | Allocations: 4234)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-08-27 22:38:43 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 57.9ms | Allocations: 4621)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 388.9ms | Allocations: 22389)
+Completed 200 OK in 437ms (Views: 406.8ms | ActiveRecord: 2.4ms | Allocations: 24381)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-08-27 22:43:41 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 275)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 3884)
+Completed 200 OK in 49ms (Views: 18.2ms | ActiveRecord: 0.3ms | Allocations: 7969)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-08-27 22:43:43 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 1046)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 4714)
+Completed 200 OK in 40ms (Views: 36.2ms | ActiveRecord: 2.0ms | Allocations: 5176)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2021-08-27 22:43:44 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 46.7ms | Allocations: 4689)
+  Rendered users/new.html.erb within layouts/application (Duration: 52.9ms | Allocations: 5059)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 77.1ms | Allocations: 8716)
+Completed 200 OK in 86ms (Views: 81.5ms | ActiveRecord: 0.0ms | Allocations: 9342)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-08-27 22:43:46 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 1040)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 55.8ms | Allocations: 4709)
+Completed 200 OK in 62ms (Views: 59.8ms | ActiveRecord: 0.4ms | Allocations: 5180)
+
+
