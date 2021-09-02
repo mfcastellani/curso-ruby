@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "aula-08/grupo2/",
+			"problemMatcher": [],
+			"label": "npm: install - aula-08/grupo2",
+			"detail": "install dependencies from package",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

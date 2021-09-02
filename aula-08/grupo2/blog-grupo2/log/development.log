@@ -6,3 +6,11 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 25ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 3631)
 
 
+Started GET "/" for 127.0.0.1 at 2021-09-02 12:06:06 -0300
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/lucatero/.rvm/gems/ruby-2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/lucatero/.rvm/gems/ruby-2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 17.8ms | Allocations: 445)
+Completed 200 OK in 99ms (Views: 32.1ms | ActiveRecord: 0.0ms | Allocations: 3631)
+
+

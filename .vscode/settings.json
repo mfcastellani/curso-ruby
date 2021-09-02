@@ -1,3 +1,8 @@
-{
-    "git.ignoreLimitWarning": true
+
+{ "terminal.integrated.profiles.linux": 
+  { "zsh (login)": 
+    { "path": "zsh",
+    "args": ["-l"]
+    }
+  }
 }
