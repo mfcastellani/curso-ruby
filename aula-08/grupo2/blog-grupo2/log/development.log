@@ -370,3 +370,92 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 178ms (Views: 153.6ms | ActiveRecord: 2.4ms | Allocations: 22931)
 
 
+Started GET "/" for 127.0.0.1 at 2021-09-03 10:57:57 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 3967)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 9588)
+Completed 200 OK in 63ms (Views: 44.2ms | ActiveRecord: 1.7ms | Allocations: 12389)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/articles/1" for 127.0.0.1 at 2021-09-03 11:20:43 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 3843)
+Completed 200 OK in 55ms (Views: 23.4ms | ActiveRecord: 1.9ms | Allocations: 8815)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2021-09-03 11:23:20 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (1.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 140)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 3858)
+Completed 200 OK in 32ms (Views: 23.6ms | ActiveRecord: 1.8ms | Allocations: 5493)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-03 11:23:25 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 848)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 4393)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.4ms | Allocations: 4905)
+
+
+Started GET "/articles1" for 127.0.0.1 at 2021-09-03 11:23:27 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/articles1"):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-03 11:24:42 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 4360)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 8195)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 3.6ms | Allocations: 9667)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2021-09-03 11:24:44 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 3686)
+Completed 200 OK in 30ms (Views: 17.1ms | ActiveRecord: 1.4ms | Allocations: 4869)
+
+
