@@ -356,3 +356,17 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 444ms (Views: 364.5ms | ActiveRecord: 0.8ms | Allocations: 11991)
 
 
+Started GET "/" for 127.0.0.1 at 2021-09-02 19:27:35 -0300
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 23.0ms | Allocations: 3967)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 143.2ms | Allocations: 20103)
+Completed 200 OK in 178ms (Views: 153.6ms | ActiveRecord: 2.4ms | Allocations: 22931)
+
+
