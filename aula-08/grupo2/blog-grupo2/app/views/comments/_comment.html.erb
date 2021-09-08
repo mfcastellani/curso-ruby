@@ -1,0 +1,15 @@
+<p>
+  <strong>Autor do comentário:</strong>
+  <%= comment.commenter %>
+</p>
+
+<p>
+  <strong>Comentário:</strong>
+  <%= comment.body %>
+</p>
+
+<p>
+  <%= link_to 'Destruir comentário', [comment.article, comment],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+</p>

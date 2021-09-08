@@ -73,3 +73,4 @@ yarn-debug.log*
 /public/uploads
 
 # End of https://www.toptal.com/developers/gitignore/api/rails
+aula-08/grupo2/blog-grupo2/tmp/
